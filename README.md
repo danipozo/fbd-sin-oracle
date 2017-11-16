@@ -1,7 +1,7 @@
 # Prácticas de FBD con PostgreSQL
 
 Este repositorio contiene una guía para replicar las prácticas de la asignatura Fundamentos de
-Bases de Datos con el SGBD PostgreSQL.
+Bases de Datos con *software* libre, concretamente el SGBD PostgreSQL.
 
 ## Motivación
 
