@@ -9,3 +9,7 @@ Actualmente, las prácticas de esta asignatura se imparten usando *software* pri
 desactualizado, llegando a hacer publicidad de cierto *software*. Esto supone que se tengan
 que usar herramientas nefastas como Windows XP o Wordpad. Es muy discutible, además, que estas prácticas
 sean acordes a los principios de la universidad pública.
+
+## Estado
+
+La guía está en progreso y se aceptan contribuciones por parte de la comunidad afectada.
