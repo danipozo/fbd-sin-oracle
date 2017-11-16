@@ -1,0 +1,98 @@
+#+TITLE: Prácticas de FBD con PostgreSQL
+
+* TODO Introducción
+* Instalación de PostgreSQL
+Puesto que el objeto de esta guía es evitar el uso de /software/ privativo para actividades
+académicas, se asume que estás usando tu distribución Linux o SO libre favorito.
+
+Se proporciona información para instalar PostgreSQL en algunos sistemas.
+
+** Arch Linux/derivados
+Existe un paquete oficial, llamado ~postgresql~. La [[https://wiki.archlinux.org/index.php/PostgreSQL][wiki de Arch]] tiene la documentación necesaria
+para una configuración básica.
+
+** Ubuntu/derivados
+También existe una [[https://help.ubuntu.com/community/PostgreSQL][guía oficial de Ubuntu]].
+
+** Documentación general
+Disponible en la [[https://www.postgresql.org/docs/9.6/static/installation.html][página de PostgreSQL]].
+
+/Nota/: el enlace anterior lleva a la documentación de la versión ~9.6.x~, hay enlaces equivalentes
+para todas las versiones. Puedes comprobar la versión que tienes instalada con la orden
+
+#+BEGIN_SRC shell
+postgres --version
+#+END_SRC
+
+* Manejo básico.
+** Creación de usuario y base de datos
+Si siguiendo alguna de las guías anteriores no has creado el usuario ~postgres~ en tu sistema, hazlo ahora.
+Tras ello, identifícate con ese usuario para tener acceso a las órdenes de administración del SGBD:
+
+#+BEGIN_SRC shell
+useradd postgres
+su - postgres
+#+END_SRC
+
+
+A continuación, crea un usuario de Postgres y base de datos:
+
+#+BEGIN_SRC shell
+createuser --interactive
+createdb database_name
+#+END_SRC
+
+
+
+** Manejo de ~psql~
+Cuando nos identificamos con el usuario ~postgres~ tenemos acceso a la orden ~psql~,
+que es una línea de comandos interactiva para introducir órdenes al SGBD.
+
+/Nota/: ~psql~ no evalúa las órdenes hasta que encuentra un punto y coma. Si se pulsa
+/enter/ antes de escribir un punto y coma, asumirá que se quiere escribir una orden en
+varias líneas.
+
+/Nota 2/: en mi experiencia, ~psql~ no guarda el historial de órdenes entre sesiones.
+Para habilitar esa funcionalidad, tuve que crear el archivo ~.psql_history~ en el directorio
+/home/ del usuario ~postgres~, y hacer que dicho archivo pertenezca a ese usuario con ~chown~. 
+
+Una vez que hemos comprobado que ~psql~ está funcionando, podemos optar por seguir el tutorial,
+como se describe en la sección siguiente.
+
+*** Creación de tablas
+La orden para crear tablas tiene la siguiente sintaxis básica:
+
+#+BEGIN_SRC sql
+CREATE TABLE <nombre_table> (
+<atributo1> <tipo1>,
+<atributo2> <tipo2>,
+...,
+)
+#+END_SRC
+
+*** Descripción de una tabla
+Para obtener la descripción de una tabla, podemos usar la orden
+
+#+BEGIN_SRC sql
+\d+ <nombre_tabla>
+#+END_SRC
+
+** Tutorial
+PostgreSQL incorpora unos archivos de órdenes SQL por defecto. Están disponibles en la [[https://www.postgresql.org/ftp/source/][distribución
+de código fuente]]. Para usarlo, descargamos la distribución de código fuente correspondiente a nuestra
+versión, la descomprimimos y dentro del directorio descomprimido, nos vamos a ~src/tutorial~ y ejecutamos
+~make~.
+
+Ejecutamos
+
+#+BEGIN_SRC shell
+psql -s <nombredb>
+#+END_SRC
+
+donde la base de datos ~nombredb~ ha sido creada anteriormente. La opción ~-s~ activa el modo
+/single-step/, que muestra la orden que se va introducir para su confirmación antes de enviarla
+al servidor.
+
+En ~psql~, ejecutamos ~\i basics.sql~, lo cual comienza el tutorial. Además, hay otros archivos ~.sql~
+que podemos ejecutar cuando terminemos con este.
+
