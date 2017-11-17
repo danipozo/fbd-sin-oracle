@@ -14,6 +14,9 @@ para una configuración básica.
 ** Ubuntu/derivados
 También existe una [[https://help.ubuntu.com/community/PostgreSQL][guía oficial de Ubuntu]].
 
+** Fedora/derivados
+Para Fedora podéis seguir [[https://www.if-not-true-then-false.com/2012/install-postgresql-on-fedora-centos-red-hat-rhel/][guía para instalar en Fedora]], teniendo en cuenta de que solo hace falta llegar hasta el el 2.4; cambiando de usuario a su postgres ya se puede usar psql sin problema.
+
 ** macOS
 
 Si por desgracia utilizas un sistema operativo privativo como es macOS, puedes utilizar ~homebrew~ para instalar PostgreSQL.
