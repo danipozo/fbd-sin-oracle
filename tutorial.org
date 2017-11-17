@@ -17,6 +17,29 @@ También existe una [[https://help.ubuntu.com/community/PostgreSQL][guía oficia
 ** Fedora/derivados
 Para Fedora podéis seguir [[https://www.if-not-true-then-false.com/2012/install-postgresql-on-fedora-centos-red-hat-rhel/][guía para instalar en Fedora]], teniendo en cuenta de que solo hace falta llegar hasta el el 2.4; cambiando de usuario a su postgres ya se puede usar psql sin problema.
 
+** macOS
+
+Si por desgracia utilizas un sistema operativo privativo como es macOS, puedes utilizar ~homebrew~ para instalar PostgreSQL.
+
+Si no tienes ~homebrew~ instalado, puedes hacerlo con el comando
+
+#+BEGIN_SRC shell
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#+END_SRC
+
+Una vez que tengas ~homebrew~, instalar PostgreSQL es tan sencillo como hacer
+
+#+BEGIN_SRC shell
+brew update
+brew install postgresql
+#+END_SRC
+
+Para ejecutar el servidor de PostgreSQL utilizamos el comando
+
+#+BEGIN_SRC shell
+postgres -D /usr/local/var/postgres
+#+END_SRC
+
 ** Documentación general
 Disponible en la [[https://www.postgresql.org/docs/9.6/static/installation.html][página de PostgreSQL]].
 
