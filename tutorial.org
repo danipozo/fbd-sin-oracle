@@ -24,7 +24,8 @@ Si por desgracia utilizas un sistema operativo privativo como es macOS, puedes u
 Si no tienes ~homebrew~ instalado, puedes hacerlo con el comando
 
 #+BEGIN_SRC shell
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL 
+https://raw.githubusercontent.com/Homebrew/install/master/install)"
 #+END_SRC
 
 Una vez que tengas ~homebrew~, instalar PostgreSQL es tan sencillo como hacer
