@@ -86,24 +86,6 @@ Para habilitar esa funcionalidad, tuve que crear el archivo ~.psql_history~ en e
 Una vez que hemos comprobado que ~psql~ está funcionando, podemos optar por seguir el tutorial,
 como se describe en la sección siguiente.
 
-*** Creación de tablas
-La orden para crear tablas tiene la siguiente sintaxis básica:
-
-#+BEGIN_SRC sql
-CREATE TABLE <nombre_table> (
-<atributo1> <tipo1>,
-<atributo2> <tipo2>,
-...,
-)
-#+END_SRC
-
-*** Descripción de una tabla
-Para obtener la descripción de una tabla, podemos usar la orden
-
-#+BEGIN_SRC sql
-\d+ <nombre_tabla>
-#+END_SRC
-
 ** Tutorial
 PostgreSQL incorpora unos archivos de órdenes SQL por defecto. Están disponibles en la [[https://www.postgresql.org/ftp/source/][distribución
 de código fuente]]. Para usarlo, descargamos la distribución de código fuente correspondiente a nuestra
@@ -122,4 +104,56 @@ al servidor.
 
 En ~psql~, ejecutamos ~\i basics.sql~, lo cual comienza el tutorial. Además, hay otros archivos ~.sql~
 que podemos ejecutar cuando terminemos con este.
+
+* Órdenes en PSQL
+
+** Entrar a una base de datos
+
+#+BEGIN_SRC sql
+\connect <nombre_base_de_datos>
+#+END_SRC
+
+** Creación de tablas
+La orden para crear tablas tiene la siguiente sintaxis básica:
+
+#+BEGIN_SRC sql
+CREATE TABLE <nombre_table> (
+<atributo1> <tipo1>,
+<atributo2> <tipo2>,
+...,
+)
+#+END_SRC
+
+** Mostrar una lista de las tablas de la base de datos
+
+#+BEGIN_SRC sql
+\dt
+#+END_SRC
+
+** Descripción de una tabla
+Para obtener la descripción de una tabla, podemos usar la orden
+
+#+BEGIN_SRC sql
+\d+ <nombre_tabla>
+#+END_SRC
+
+** Cargar un archivo de órdenes
+
+#+BEGIN_SRC sql
+\i <nombre_archivo>
+#+END_SRC
+
+En ~<nombre_archivo>~ podemos especificar una ruta relativa o completa.
+
+* Equivalencias entre variables
+
+|Oracle|PostgreSQL|
+|------+----------|
+|varchar2|varchar|
+|number(p,s)|decimal(p,s)|
+|number(p)|int (si p < 9)|
+|date|timestamp(0)|
+
+
+
 
