@@ -146,6 +146,7 @@ Para obtener la descripción de una tabla, podemos usar la orden
 En ~<nombre_archivo>~ podemos especificar una ruta relativa o completa.
 
 ** Añadir atributos
+
 Para añadir un nuevo atributo a una tabla ya creada utilizamos
 
 #+BEGIN_SRC sql
@@ -159,6 +160,14 @@ ALTER TABLE <nombre_tabla>
 INSERT INTO <nombre_tabla> (<columna1>,  <columna2>, ...) 
   VALUES (<valor1>, <valor2>, ...);
 #+END_SRC
+
+** Proyectar el contenido de una tabla
+
+\+BEGIN_SRC sql
+SELECT <campo1>, <campo2>, ... FROM <nombre-tabla>
+#+END_SRC
+
+Para proyectar sobre todos los atributos de la tabla utilizamos `*` como campo.
 
 * Equivalencias entre variables
 
