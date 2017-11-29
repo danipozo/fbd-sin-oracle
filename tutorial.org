@@ -145,6 +145,21 @@ Para obtener la descripción de una tabla, podemos usar la orden
 
 En ~<nombre_archivo>~ podemos especificar una ruta relativa o completa.
 
+** Añadir atributos
+Para añadir un nuevo atributo a una tabla ya creada utilizamos
+
+#+BEGIN_SRC sql
+ALTER TABLE <nombre_tabla>
+  ADD COLUMN <nombre_atributo> <tipo_atributo>;
+#+END_SRC
+
+** Insertar datos
+
+#+BEGIN_SRC sql
+INSERT INTO <nombre_tabla> (<columna1>,  <columna2>, ...) 
+  VALUES (<valor1>, <valor2>, ...);
+#+END_SRC
+
 * Equivalencias entre variables
 
 |Oracle|PostgreSQL|
