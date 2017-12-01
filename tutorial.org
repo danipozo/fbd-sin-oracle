@@ -177,6 +177,7 @@ Para proyectar sobre todos los atributos de la tabla utilizamos `*` como campo.
 |number(p,s)|decimal(p,s)|
 |number(p)|int (si p < 9)|
 |date|timestamp(0)|
+|sysdate|current_date|
 
 
 
