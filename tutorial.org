@@ -194,6 +194,10 @@ SET <atributo> = '<nuevo_valor>' [, <atributo2> = 'valor2', ...]
 [WHERE <condicion>];
 #+END_SRC
 
+** Eliminar una tupla
 
+#+BEGIN_SRC sql
+DELETE FROM <nombre_tabla> [WHERE <condicion>];
+#+END_SRC
 
 
