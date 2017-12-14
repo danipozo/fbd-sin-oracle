@@ -4,6 +4,7 @@ create table ventas  (
 	codpj char(3) references proyecto(codpj),
 	
 	cantidad int,
+	fecha date,
 	constraint clave_primaria 
 		primary key (codpro,codpie,codpj)
 );
